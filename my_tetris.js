@@ -303,6 +303,7 @@ document.onkeydown = function (e) {
   }
 };
 
+
 function updateGameState() {
   if (!isPaused) {
     addActiveTetro();
@@ -323,11 +324,24 @@ pauseBtn.addEventListener("click", (e) => {
 });
 
 startBtn.addEventListener("click", (e) => {
-  e.target.innerHTML = "Speed Up";
+  e.target.innerHTML = "Restart";
   isPaused = false;
   gameTimerID = setTimeout(startGame, possibleLevels[currentLevel].speed);
   gameOver.style.display = "none";
 });
+// startBtn.addEventListener("click", () => {
+//   if (startBtn.innerHTML === "Restart") {
+//     // Restart the game
+//     startGame();
+//     startBtn.innerHTML = "Start";
+//   } else {
+//     // Start a new game
+//     isPaused = false;
+//     gameTimerID = setTimeout(startGame, possibleLevels[currentLevel].speed);
+//     gameOver.style.display = "none";
+//     startBtn.innerHTML = "Restart";
+//   }
+// });
 
 scroeElem.innerHTML = score;
 levelElem.innerHTML = currentLevel;
